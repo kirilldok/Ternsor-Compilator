@@ -1,6 +1,6 @@
 #include <iostream>
-#include "include/parser.h"
-#include "include/visualizer.h"
+#include "../include/parser.h"
+#include "../include/visualizer.h"
 
 int main(int argc, char** argv) {
     if (argc < 2) {

@@ -1,5 +1,5 @@
-#include "include/parcer.h"
-#include "include/operations.h"
+#include "../include/parcer.h"
+#include "../include/operations.h"
 #include <onnx/onnx_pb.h>
 #include <fstream>
 #include <iostream>

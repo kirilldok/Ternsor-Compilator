@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.10)
+project(TensorFrontend)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Поиск зависимостей
+find_package(Protobuf REQUIRED)
+find_package(onnx REQUIRED)
+
+# Пути к заголовочным файлам
+include_directories(include)
+include_directories(${PROTOBUF_INCLUDE_DIRS})
+include_directories(${ONNX_INCLUDE_DIRS})
+
+# Основной исполняемый файл
+add_executable(frontend
+    src/main.cpp
+    src/graph.cpp
+    src/parser.cpp
+    src/visualizer.cpp
+)
+
+target_link_libraries(frontend
+    ${PROTOBUF_LIBRARIES}
+    onnx
+)
+
+# Подключаем тесты
+add_subdirectory(tests)

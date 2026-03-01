@@ -1,4 +1,4 @@
-#include "include/graph.h"
+#include "../include/graph.h"
 
 void Graph::add_node(const Node& node) {
     nodes.push_back(node);
